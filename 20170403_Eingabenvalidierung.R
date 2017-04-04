@@ -5,7 +5,7 @@ library(shiny)
 server <- function(input, output) {
   
   output$text_ergebnis_buchstabe <- renderText({
-    # Rruefung, ob der eingegebene Wert nur Buchstaben enthaelt und nicht leer ist
+    # Pruefung, ob der eingegebene Wert nur Buchstaben enthaelt und nicht leer ist
     validate(
       need(grepl("^[A-Za-z]+$", input$text_buchstabe, perl = TRUE) & input$text_buchstabe != "", "Bitte Buchstaben eingegeben!")
     )
